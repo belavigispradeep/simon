@@ -3,12 +3,14 @@ let p = document.querySelector("p");
 let gameSeq = [];
 let userSeq = [];
 let h3 = document.querySelector("h3");
+let h4=document.querySelector("h4");
 
 
 let btns = ["red", "yellow", "green", "purple"];
 
 let start = false;
 let level = 0;
+let highScore = 0; // High score variable
 
 document.addEventListener("keypress", function () {
   if (start == false) {
@@ -57,7 +59,12 @@ function checkAns(idx){
           setTimeout(levelUp,1000);
         }
     }else{
+      // Update high score if the current level exceeds the high score
+    if (level > highScore) {
+      highScore = level;
+    }
        h3.innerHTML=`<b>Game Over..!</b> Your score was ${level} <br>Press any key to start`;
+       h4.innerHTML = `High Score: ${highScore}`;// Display the current level and high score when the game ends
        start=false;
        level=0;
        gameSeq=[];
