@@ -62,7 +62,7 @@ function checkAns(idx){
     if (level > highScore) {
       highScore = level;
     }
-       h3.innerHTML=`<b>Game Over..!</b> Your score was ${level} <br>Press any key to start`;
+       h3.innerHTML=`<b>Game Over..!</b> Your score was ${level} <br>Press start restart game`;
        h4.innerHTML = `High Score: ${highScore}`;// Display the current level and high score when the game ends
        start=false;
        level=0;
