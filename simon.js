@@ -12,13 +12,12 @@ let start = false;
 let level = 0;
 let highScore = 0; // High score variable
 
-document.addEventListener("keypress", function () {
-  if (start == false) {
+document.getElementById("start-btn").addEventListener("click", function () {
+  if (!start) {
     console.log("Game is started");
     start = true;
+    levelUp();
   }
-
-  levelUp();
 });
 
 function gameFlash(randBtn) {
